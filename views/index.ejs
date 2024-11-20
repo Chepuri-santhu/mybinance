@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crypto live prices </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>My Binance</h1>
+    <div id="crypto-prices">
+        <!-- <p>Bitcoin(BTC) :$<span><%=bitcoinprice %></span></p>
+        <p>Ethereum(ETH):$<span><%= ethereumprice %></span></p>
+        <p>Ripple(XRP)  :$<span><%= Rippleprice %></span></p> -->
+        <p>
+            
+        <img src="/images/bitcoinimage.png" width="32" height="32"> 
+        Bitcoin(BTC)  :$<span style="color: <%= bitcoinprice > BitcoinP ? 'green':(bitcoinprice < BitcoinP ? 'red':'yellow') %>; " >
+             <%= bitcoinprice %>
+            </span>
+       </p> 
+        <p> 
+            <img src="/images/ethereumimage.png" width="32" height="32"> 
+            Ethereum(ETH) :$<span style="color: <%= ethereumprice > ethereumP ? 'green':(ethereumprice < ethereumP ?'red':'yellow')%>;">
+                 <%= ethereumprice %>
+            </span>
+        </p> 
+
+        <p>
+            <img src="/images/ripplecoinimage.png" width="32" height="32"> 
+            Ripple(XRP): $<span style="color: <%= Rippleprice > rippleP ? 'green' : (Rippleprice < rippleP ? 'red' : 'yellow') %>;">
+                <%= Rippleprice %>
+            </span>
+        </p> 
+    </div> 
+    <script src="/script.js"></script>
+</body>
+</html>

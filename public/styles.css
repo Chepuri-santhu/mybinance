@@ -1,0 +1,121 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background-color: #1e1e1e;
+  background-image: url('/images/world\ map\ background\ .png'); /* Path to your image */
+  background-size:30%;
+  background-size: cover; /* Make the image cover the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Don't repeat the image */
+  background-attachment: fixed;
+}
+
+/* Positioning h1 at the top */
+/* h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: #ffffff;
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  width: 100%;
+} */
+h1 {
+  font-family: 'Montserrat', sans-serif; /* Choose your font */
+  font-size: 2.5rem; /* Size */
+  font-weight: 700; /* Bold */
+  color: #ffffff; /* Text color */
+  position:absolute;
+  top:20px;
+  text-align: center; /* Center the text */
+  margin: 20px 0; /* Margin around the heading */
+}
+
+
+/* Main container holding the crypto prices */
+#crypto-prices {
+  background-color: rgba(33, 25, 25, 0.8); /* Transparent black card background */
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 60px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  position: absolute; /* Important for positioning pseudo-elements */
+  overflow: hidden; /* Ensure child elements do not overflow */
+}
+
+/* Rotating colors using pseudo-element */
+#crypto-prices::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5000px; /* Match border-radius of the main container */
+  z-index: -1; /* Send to back */
+  background: linear-gradient(0deg, red, green); /* Background gradient */
+  /* animation:rotateColors 5s cubic-bezier(0,0.89,1,-0.01) infinite; */
+  animation:rotateColors 5s linear(0 0%, 0.49 5.82%, 0.52 48.71%, 0.94 53.58%, 1 100%) infinite;
+}
+
+/* Keyframes for rotating colors */
+@keyframes rotateColors {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glowing effect around the card using animated RGB lights */
+@keyframes rgbGlow {
+  0% {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7),
+                0 0 40px 10px rgba(0, 255, 0, 0.7),
+                0 0 60px 15px rgba(0, 0, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.7),
+                0 0 40px 10px rgba(0, 0, 255, 0.7),
+                0 0 60px 15px rgba(255, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 255, 0.7),
+                0 0 40px 10px rgba(255, 0, 0, 0.7),
+                0 0 60px 15px rgba(0, 255, 0, 0.7);
+  }
+}
+
+/* Flex layout for price elements */
+#crypto-prices p {
+  font-size: 1rem;
+  margin: 15px 0;
+  font-weight: bold;
+  font-family:'Courier New', Courier, monospace;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+
+
+  display: flex;
+  justify-content: space-between; /* Align coin names and prices at opposite ends */
+  padding: 0 10px; /* Padding inside the line for spacing */
+}
+
+/* Hover effect for the card to emphasize interactivity */
+#crypto-prices:hover {
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+span {
+  color: red;
+}
