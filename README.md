@@ -24,7 +24,7 @@ Make sure you have **Node.js** installed on your system.
 ### Steps to run the project:
 1. **Clone the repository**
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/Chepuri-santhu/mybinance.git
    cd binance-electron-app
    ```
 
